@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 // STYLES
-import "./utils/constants/styles/globals.css";
-import Container_App from "./components/layouts/containers/ContainerApp";
 
 export const metadata: Metadata = {
   title: "Restaurant - The Kitchen",
@@ -22,9 +20,7 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <Container_App>
         {children}
-        </Container_App>
       </body>
     </html>
   );
