@@ -1,0 +1,21 @@
+{
+  "IndexPage": {
+    "title": "contoh next-intl",
+    "description": "Selamat datang di contoh Next.js Internationalization (i18n)! Demo ini memperlihatkan kekuatan App Router dan cara mengelola konten multibahasa dengan lancar menggunakan next-intl."
+  },
+  "PresentationOfTheEstablishment": {
+    "title": "Bienvenue à The Kitchen !",
+    "textPresentation": "Nous nous présentons, nous sommes Leigh et Robert.\nNous sommes installés dans les montagnes du sud de la France depuis 2005.\n\n Moi, Leigh, j&#39;ai travaillé dans la restauration privée dans les Alpes pendant 3 ans avant de déménager dans le sud et de gérer mon propre restaurant. Au fil des ans, j'ai travaillé en cuisine avec de nombreux chefs (français, britanniques, italiens et espagnols) et j'ai adoré apprendre d&#39;eux.\n\n Robert est un chef de formation classique et a dirigé son propre hôtel pendant 16 ans avant de me rejoindre pour de nouvelles aventures.\n\n L'occasion de troquer les montagnes pour une vie au milieu des vignobles s&#39;est présentée au début de cette année et nous sommes impatients de vous présenter quelques-uns de nos plats préférés, issus non seulement des montagnes mais aussi de nos voyages.\n\n Nous espérons que vous passerez un agréable moment en notre compagnie",
+    "finalWord": "Bon appetit"
+  },
+  "NotFoundPage": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Ups! Sepertinya Anda menemukan halaman yang tidak ada. Jangan khawatir, sihir internasionalisasi kami masih bekerja keras di bagian lain aplikasi. Silakan kembali untuk menjelajahi lebih lanjut!"
+  },
+  "Navigation": {
+    "home": "Beranda"
+  },
+  "Footer": {
+    "copyright": "© 2024 Aplikasi Anda. Hak cipta dilindungi."
+  }
+}
