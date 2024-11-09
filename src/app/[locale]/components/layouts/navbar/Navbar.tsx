@@ -1,19 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import LocalSwitcher from "./local-switcher";
-// ICONS
-import { CiUser } from "react-icons/ci";
-import BoxHeader from "./BoxHeader";
 // IMGS
 import logo_TheKitchen_Restaurant from "/public/assets/logo/logo_TheKitchen_Restaurant.png";
 import { Box } from "@mui/material";
 
 export default function Navbar() {
-  const [showNav, setShowNav] = useState(false)
   const [navbar, setNavbar] = useState(false)
 
   function changeBgNavbar() {
@@ -56,29 +52,8 @@ export default function Navbar() {
           width={400}
         />
       </Link>
+      <Link href={`/${localActive}/photoGallery`}>Galerie Photo</Link>
       <LocalSwitcher />
     </Box>
   );
-
-  // return (
-  //   <header className="p-4">
-  //     <nav className="flex items-center justify-between">
-  //       <Link href="/">
-  //         <Image
-  //           alt="logo"
-  //           height={400}
-  //           src={logo_TheKitchen_Restaurant}
-  //           style={{ height: "80px", width: "300px" }}
-  //           width={400}
-  //         />
-  //       </Link>
-  //       <BoxHeader />
-  //       <Link href={`/${localActive}/photoGallery`}>Galerie Photo</Link>
-  //       <Link href={`/${localActive}/auth/login`}>
-  //         <CiUser size={40} className="cursor-pointer" />
-  //       </Link>
-  //       <LocalSwitcher />
-  //     </nav>
-  //   </header>
-  // );
 }
