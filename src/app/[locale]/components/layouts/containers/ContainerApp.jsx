@@ -35,8 +35,8 @@ export default function Container_App({ children }) {
   }, []);
 
   return (
-    <Box>
-      {matches ? null : (
+    <Box>ijjijjiji
+{/* {      {matches ? null : (
         <>
           <Navbar />
           <CustomCursor />
@@ -45,7 +45,7 @@ export default function Container_App({ children }) {
       )}
       <ProgressBar />
       {children}
-      <Footer />
+      <Footer />} */}
     </Box>
   );
 }
