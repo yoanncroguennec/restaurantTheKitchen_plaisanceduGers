@@ -1,16 +1,34 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Select from "react-select";
 // DATAS
 import items from "../../../../utils/constants/data/dataMenuFood";
 // STYLES
+import {
+  RootSection_MenuCard,
+  DividingLine,
+  Box_No_CategorySelected,
+  RootListItems,
+  BoxListItems,
+  BoxBtn,
+  TypoBold,
+} from "./StylesSection_MenuCard";
 
 export default function Section_MenuCard() {
   //////////////////// RESPONSIVES ////////////////////
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
+
+  //
+  const [seeMore, setSeeMore] = useState(false);
 
   //
   const [product] = useState(items);
@@ -28,60 +46,102 @@ export default function Section_MenuCard() {
     : [];
 
   return (
-    <Box
-      sx={{
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "50vh",
-      }}
-    >
-      <Typography variant={matches ? "h6" : "h4"}>Notre carte</Typography>
-      <Box
-        sx={{
-          width: "6rem",
-          height: "0.25rem",
-          background: "#c59d5f",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      />
-      <Box style={{ width: "300px" }}>
+    <RootSection_MenuCard>
+      <TypoBold variant={matches ? "h6" : "h4"}>Notre carte</TypoBold>
+      <DividingLine />
+      <Box style={{}}>
         <Select
           isClearable
-          isSearchable={false}
+          isSearchable={false} // N'affiche pas le clavier sur les appareils mobiles et empêche le zoom
           options={categoryOptions}
           placeholder='Selectionnez une catégorie'
           onChange={(selectOption) => setSelectedCategory(selectOption)}
           value={selectedCategory}
         />
       </Box>
-      {filterProducts.map(({ name, subCategory, desc, price }, id) => (
-        <Box
-          key={id}
-          sx={{
-            alignItems: "center",
-            display: "flex",
-            flexWrap: "nowrap",
-            justifyContent: "space-evenly",
-            margin: "25px 0",
-            width: "100%",
-          }}
-        >
-          <Box sx={{ width: "70%" }}>
-            {subCategory}
-            <Typography variant={matches ? "body1" : "h6"}>{name}</Typography>
-            {desc ? (
-              <Typography variant={matches ? "body2" : "body1"}>
-                {desc}
-              </Typography>
+      {selectedCategory == null ? (
+        <Box_No_CategorySelected>
+          <TypoBold variant={matches ? "h6" : "h4"}>
+            Aucun catégorie sélectionnée
+          </TypoBold>
+        </Box_No_CategorySelected>
+      ) : (
+        <RootListItems>
+          {filterProducts
+            .slice(0, 8)
+            .map(({ name, subCategory, desc, price }, id) => (
+              <BoxListItems key={id}>
+                <Box sx={{ width: "70%" }}>
+                  {subCategory}
+                  <TypoBold variant={matches ? "body1" : "h6"}>{name}</TypoBold>
+                  {desc ? (
+                    <Typography variant={matches ? "body2" : "body1"}>
+                      {desc}
+                    </Typography>
+                  ) : (
+                    ""
+                  )}
+                </Box>
+                <Typography
+                  sx={{ fontWeight: "bold" }}
+                  variant={matches ? "body1" : "h6"}
+                >
+                  {price}€
+                </Typography>
+              </BoxListItems>
+            ))}
+
+          {/* ijijijjiji */}
+          {filterProducts.length > 8 ? (
+            seeMore ? (
+              <Box>
+                {filterProducts
+                  .slice(6)
+                  .map(({ name, subCategory, desc, price }, id) => (
+                    <BoxListItems key={id}>
+                      <Box sx={{ width: "70%" }}>
+                        {subCategory}
+                        <Typography variant={matches ? "body1" : "h6"}>
+                          {name}
+                        </Typography>
+                        {desc ? (
+                          <Typography variant={matches ? "body2" : "body1"}>
+                            {desc}
+                          </Typography>
+                        ) : (
+                          ""
+                        )}
+                      </Box>
+                      <TypoBold variant={matches ? "body1" : "h6"}>
+                        {price}€
+                      </TypoBold>
+                    </BoxListItems>
+                  ))}
+
+                <BoxBtn>
+                  <Button
+                    sx={{ margin: "0 auto", width: "250px" }}
+                    onClick={() => setSeeMore(false)}
+                    variant='outlined'
+                  >
+                    <TypoBold variant='h6'>VOIR MOINS</TypoBold>
+                  </Button>
+                </BoxBtn>
+              </Box>
             ) : (
-              ""
-            )}
-          </Box>
-          <Typography sx={{ fontWeight: "bold" }} variant={matches ? "body1" : "h6"}>{price}€</Typography>
-        </Box>
-      ))}
-    </Box>
+              <BoxBtn>
+                <Button
+                  sx={{ margin: "0 auto", width: "250px" }}
+                  onClick={() => setSeeMore(true)}
+                  variant='outlined'
+                >
+                  <TypoBold variant='h6'>VOIR PLUS</TypoBold>
+                </Button>
+              </BoxBtn>
+            )
+          ) : null}
+        </RootListItems>
+      )}
+    </RootSection_MenuCard>
   );
 }
