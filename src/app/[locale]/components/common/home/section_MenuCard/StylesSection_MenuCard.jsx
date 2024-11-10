@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, styled, Typography } from "@mui/material";
+import { Box, Button, styled, Typography } from "@mui/material";
 
 export const RootSection_MenuCard = styled(Box)(({ theme }) => ({
   alignItems: "center",
@@ -43,6 +43,12 @@ export const BoxListItems = styled(Box)(({ theme }) => ({
   flexWrap: "nowrap",
   justifyContent: "space-evenly",
   margin: "5px 0",
+  [theme.breakpoints.down("sm")]: {},
+}));
+
+
+export const BoxTitleDesc = styled(Box)(({ theme }) => ({
+   width: "60%",
   [theme.breakpoints.down("sm")]: {},
 }));
 

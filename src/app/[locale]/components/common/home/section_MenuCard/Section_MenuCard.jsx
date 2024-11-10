@@ -1,3 +1,4 @@
+// A NE PLUS TOUCHER
 "use client";
 
 import React, { useState } from "react";
@@ -18,6 +19,7 @@ import {
   Box_No_CategorySelected,
   RootListItems,
   BoxListItems,
+  BoxTitleDesc,
   BoxBtn,
   TypoBold,
 } from "./StylesSection_MenuCard";
@@ -71,7 +73,7 @@ export default function Section_MenuCard() {
             .slice(0, 8)
             .map(({ name, subCategory, desc, price }, id) => (
               <BoxListItems key={id}>
-                <Box sx={{ width: "70%" }}>
+                <BoxTitleDesc>
                   {subCategory}
                   <TypoBold variant={matches ? "body1" : "h6"}>{name}</TypoBold>
                   {desc ? (
@@ -81,17 +83,12 @@ export default function Section_MenuCard() {
                   ) : (
                     ""
                   )}
-                </Box>
-                <Typography
-                  sx={{ fontWeight: "bold" }}
-                  variant={matches ? "body1" : "h6"}
-                >
-                  {price}€
-                </Typography>
+                </BoxTitleDesc>
+                <TypoBold variant={matches ? "body1" : "h6"}>{price}€</TypoBold>
               </BoxListItems>
             ))}
 
-          {/* ijijijjiji */}
+          {/* PARTIE VOIR PLUS DE LA LISTE DES PRODUITS DE LA CARTE */}
           {filterProducts.length > 8 ? (
             seeMore ? (
               <Box>
@@ -99,7 +96,7 @@ export default function Section_MenuCard() {
                   .slice(6)
                   .map(({ name, subCategory, desc, price }, id) => (
                     <BoxListItems key={id}>
-                      <Box sx={{ width: "70%" }}>
+                      <BoxTitleDesc>
                         {subCategory}
                         <Typography variant={matches ? "body1" : "h6"}>
                           {name}
@@ -111,7 +108,7 @@ export default function Section_MenuCard() {
                         ) : (
                           ""
                         )}
-                      </Box>
+                      </BoxTitleDesc>
                       <TypoBold variant={matches ? "body1" : "h6"}>
                         {price}€
                       </TypoBold>
@@ -119,22 +116,14 @@ export default function Section_MenuCard() {
                   ))}
 
                 <BoxBtn>
-                  <Button
-                    sx={{ margin: "0 auto", width: "250px" }}
-                    onClick={() => setSeeMore(false)}
-                    variant='outlined'
-                  >
+                  <Button onClick={() => setSeeMore(false)} variant='outlined'>
                     <TypoBold variant='h6'>VOIR MOINS</TypoBold>
                   </Button>
                 </BoxBtn>
               </Box>
             ) : (
               <BoxBtn>
-                <Button
-                  sx={{ margin: "0 auto", width: "250px" }}
-                  onClick={() => setSeeMore(true)}
-                  variant='outlined'
-                >
+                <Button onClick={() => setSeeMore(true)} variant='outlined'>
                   <TypoBold variant='h6'>VOIR PLUS</TypoBold>
                 </Button>
               </BoxBtn>
