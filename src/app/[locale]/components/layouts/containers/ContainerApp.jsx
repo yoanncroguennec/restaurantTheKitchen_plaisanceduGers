@@ -50,7 +50,7 @@ export default function Container_App({ children }) {
       {children}
       <Footer /> */}
       <ProgressBar />
-      {children}
+      <Box sx={{ minHeight: "100vh" }}>{children}</Box>
       <Footer />
     </Box>
   );
