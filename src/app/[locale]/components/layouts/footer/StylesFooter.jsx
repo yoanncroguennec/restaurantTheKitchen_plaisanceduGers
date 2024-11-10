@@ -9,7 +9,7 @@ export const RootFooter = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "space-between",
   padding: "20px",
-  position: "fixed",
+  position: "relative",
   width: "100vw",
   [theme.breakpoints.down("sm")]: {},
 }));
