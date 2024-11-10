@@ -1,30 +1,21 @@
+// A NE PLUS TOUCHER
 "use client";
 
 import Link from "next/link";
-import {
-  Box,
-  styled,
-  Typography,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
-import OpeningHours from "./openingHours/OpeningHours";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { useLocale } from "next-intl";
-
-export const RootFooter = styled(Box)(({ theme }) => ({
-  alignItems: "center",
-  background: "#000",
-  bottom: 0,
-  color: "#FFF",
-  display: "flex",
-  // flexWrap: "nowrap",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  padding: "20px",
-  position: "relative",
-  width: "100vw",
-  [theme.breakpoints.down("sm")]: {},
-}));
+//
+import OpeningHours from "./openingHours/OpeningHours";
+// ICONS
+import { FaFacebookF } from "react-icons/fa";
+// STYLES
+import {
+  RootFooter,
+  Box_OpeningHours_Contact,
+  Box_Contact,
+  DividingLine,
+  TextAlignBold,
+} from "./StylesFooter.jsx";
 
 export default function Footer() {
   //////////////////// RESPONSIVES ////////////////////
@@ -36,44 +27,45 @@ export default function Footer() {
 
   return (
     <RootFooter>
-      <Box
-        sx={{
-          alignItems: "",
-          display: "flex",
-          flexWrap: "nowrap",
-          justifyContent: "space-evenly",
-          width: "100vw",
-        }}
-      >
+      <Box_OpeningHours_Contact>
         <Box>
+          <TextAlignBold variant={matches ? "h6" : "h4"}>
+            Horaires
+          </TextAlignBold>
           <OpeningHours />
         </Box>
+
+        {matches ? <DividingLine /> : null}
+
         <Box>
-          <Typography variant={matches ? "h6" : "h4"}>Contact</Typography>
+          <TextAlignBold variant={matches ? "h6" : "h4"}>Contact</TextAlignBold>
           <Typography variant={matches ? "body2" : "h6"}>
             26 Rue de l'Adour, 32160 Plaisance
           </Typography>
-          <Link href='#' target='_blank'>
-            <Typography variant={matches ? "body2" : "h6"}>
-              07 80 29 36 33
-            </Typography>
-          </Link>
-          <Link href='#' target='_blank'>
-            Facebook
-          </Link>
+          <Box_Contact>
+            <Link href='#' target='_blank'>
+              <Typography variant={matches ? "body2" : "h6"}>
+                07 80 29 36 33
+              </Typography>
+            </Link>
+            <Link href='#' target='_blank'>
+              <FaFacebookF color='#00F' size={30} />
+            </Link>
+          </Box_Contact>
         </Box>
-      </Box>
+      </Box_OpeningHours_Contact>
+      <DividingLine />
 
       <Box>
         <Link href={`/${localActive}/pages/legalInformation`} target='_blank'>
-          <Typography variant={matches ? "body2" : "h6"}>
+          <TextAlignBold variant={matches ? "body1" : "h6"}>
             Mentions légales
-          </Typography>
+          </TextAlignBold>
         </Link>
         <Link href='#' target='_blank'>
-          <Typography variant={matches ? "body2" : "h6"}>
+          <TextAlignBold variant={matches ? "body1" : "h6"}>
             Conditions Générales d'Utilisation
-          </Typography>
+          </TextAlignBold>
         </Link>
       </Box>
     </RootFooter>

@@ -24,7 +24,7 @@ export default function OpeningHours() {
     if (str == day) {
       return (
         <RootOpeningHours>
-          <TypoDay color="#00F" variant="h6">
+          <TypoDay color='#00F' variant={matches ? "body2" : "h6"}>
             {str}
           </TypoDay>
           <Condition_OpeningHours timeOpen={timeOpen} timeClosed={timeClosed} />
