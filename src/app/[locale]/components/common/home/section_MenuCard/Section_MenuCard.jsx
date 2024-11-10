@@ -49,6 +49,7 @@ export default function Section_MenuCard() {
       <Box style={{ width: "300px" }}>
         <Select
           isClearable
+          isSearchable={false}
           options={categoryOptions}
           placeholder='Selectionnez une catégorie'
           onChange={(selectOption) => setSelectedCategory(selectOption)}
