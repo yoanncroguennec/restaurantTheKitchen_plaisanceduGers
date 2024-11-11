@@ -42,7 +42,7 @@ export const BoxCard = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const TypoBold = styled(Typography)(({ theme }) => ({
+export const TypoBold = styled(Typography)(({  }) => ({
   fontWeight: "bold",
 }));
 
@@ -51,7 +51,7 @@ export const StylesIcon = {
   width: "60px",
 };
 
-export const TypoLink = styled(Typography)(({ theme }) => ({
+export const TypoLink = styled(Typography)(({  }) => ({
   "&:hover": {
     color: "#F0F",
     cursor: "pointer",
