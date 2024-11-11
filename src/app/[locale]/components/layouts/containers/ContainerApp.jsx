@@ -52,9 +52,6 @@ export default function Container_App({ children }) {
         </>
       )}
       <ProgressBar />
-      {children}
-      <Footer />
-      <ProgressBar />
       <Box sx={{ paddingTop: "100px", minHeight: "100vh" }}>{children}</Box>
       <Footer />
     </Box>

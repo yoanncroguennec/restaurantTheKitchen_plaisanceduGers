@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 // LAYOUTS
 import Container_App from "@/app/[locale]/components/layouts/containers/ContainerApp";
+// PROVIDERS
+import { Providers } from "./utils/providers/providers";
 // STYLES
 import "@/app/[locale]/utils/constants/styles/globals.css";
-//
-
-import { Providers } from "./providers/providers";
 
 export const metadata: Metadata = {
   title: "Restaurant -j The Kitchen",

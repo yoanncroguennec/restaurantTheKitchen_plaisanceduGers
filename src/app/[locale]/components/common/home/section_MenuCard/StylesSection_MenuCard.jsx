@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, styled, Typography } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 
 export const RootSection_MenuCard = styled(Box)(({ theme }) => ({
   alignItems: "center",

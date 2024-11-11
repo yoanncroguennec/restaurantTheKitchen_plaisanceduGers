@@ -3,8 +3,8 @@
 // import { ThemeProvider } from "acme-theme"; // This should be the Redux provider
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
-import global_en from "../../translate/en/global.json";
-import global_fr from "../../translate/fr/global.json";
+import global_en from "../constants/translate/en/global.json";
+import global_fr from "../constants/translate/fr/global.json";
 
 i18next.init({
   interpolation: { escapeValue: false },
