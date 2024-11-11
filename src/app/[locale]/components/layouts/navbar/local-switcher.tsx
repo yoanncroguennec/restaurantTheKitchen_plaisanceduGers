@@ -11,7 +11,7 @@ export default function LocalSwitcher() {
 
   const handleChange = (event: SelectChangeEvent) => {
     setLanguage(event.target.value as string);
-    i18n.changeLanguage(event.target.value as string);
+    // i18n.changeLanguage(event.target.value as string);
   };
 
   return (
