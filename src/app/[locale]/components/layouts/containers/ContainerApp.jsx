@@ -38,12 +38,12 @@ export default function Container_App({ children }) {
 
   return (
     <Box>
-      {/* <Button onClick={() => handleChangeLanguage("en")} variant='outlined'>
+      <Button onClick={() => handleChangeLanguage("en")} variant='outlined'>
         EN
       </Button>
       <Button onClick={() => handleChangeLanguage("es")} variant='outlined'>
         FR
-      </Button> */}
+      </Button>
        <Navbar />
       {matches ? null : (
         <>
@@ -53,7 +53,7 @@ export default function Container_App({ children }) {
       )}
       <ProgressBar />
       {children}
-      <Footer /> */}
+      <Footer />
       <ProgressBar />
       <Box sx={{ paddingTop: "100px", minHeight: "100vh" }}>{children}</Box>
       <Footer />
