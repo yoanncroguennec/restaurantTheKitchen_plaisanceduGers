@@ -7,6 +7,7 @@ import {
   Section_MenuCard,
   Section_CustomerReviews,
   Section_Btns,
+  Section_Contact,
   Section_Map,
 } from "../../components/common";
 
@@ -20,6 +21,7 @@ export default function pages() {
       <Section_MenuCard />
       <Section_CustomerReviews />
       <Section_Btns />
+      <Section_Contact />
       <Section_Map />
       <ScrollToTop smooth />
     </Box>

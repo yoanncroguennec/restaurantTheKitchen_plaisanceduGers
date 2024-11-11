@@ -1,3 +1,5 @@
+/// A NE PLUS TOUCHER
+
 // Source Lesson : "Youtube"
 // Teacher Lesson : "Code With Yd"
 // Desc Lesson : "Responsive Image gallery in React js | Build a Photo Gallery With React js | Image Gallery in React"
@@ -59,10 +61,9 @@ export default function PhotoGallery() {
       </BoxModalImg>
 
       {/* LIST PHOTOS GALERY */}
-      <BoxGallery className='gallery'>
+      <BoxGallery>
         {dataPhotoGallery.map((img, index) => (
           <StylesImg
-            className='pics'
             key={index}
             onClick={() => handleGetImg(img)}
           >

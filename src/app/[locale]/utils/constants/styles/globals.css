@@ -25,3 +25,59 @@
   background: hsl(120 100% 10% / 1);
   border-radius: 100vw;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main {
+  background: #000;
+  color: #FFF;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.eye {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.copy {
+  position: relative;
+  font-size: 20px;
+  width: 20%;
+  z-index: 1;
+}
+
+
+
+
+
+
+
