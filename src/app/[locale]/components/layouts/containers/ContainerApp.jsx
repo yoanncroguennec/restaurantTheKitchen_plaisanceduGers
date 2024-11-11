@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
 // LAYOUTS
 import { Navbar, ProgressBar, CustomCursor, Footer } from "..";
 
 export default function Container_App({ children }) {
+  const [t, i18n] = useTranslation("global");
   //////////////////// RESPONSIVES ////////////////////
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -30,8 +32,19 @@ export default function Container_App({ children }) {
     };
   }, []);
 
+  function handleChangeLanguage(lang) {
+    i18n.changeLanguage(lang);
+  }
+
   return (
     <Box>
+      {t("header.message")} //
+      <Button onClick={() => handleChangeLanguage("en")} variant='outlined'>
+        EN
+      </Button>
+      <Button onClick={() => handleChangeLanguage("es")} variant='outlined'>
+        FR
+      </Button>
       {matches ? null : (
         <>
           <Navbar />
