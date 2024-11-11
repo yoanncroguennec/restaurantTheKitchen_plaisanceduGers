@@ -38,7 +38,7 @@ export default function Container_App({ children }) {
 
   return (
     <Box>
-      {t("header.message")} //
+      {t("header.message")} // {t("presentationOfTheEstablishment.finalWord")}
       <Button onClick={() => handleChangeLanguage("en")} variant='outlined'>
         EN
       </Button>

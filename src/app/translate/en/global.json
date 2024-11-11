@@ -4,5 +4,24 @@
   },
   "home": {
     "body": "Welcome to The Kitchen !"
+  },
+  "indexPage": {
+    "title": "next-intl example",
+    "description": "Welcome to the Next.js Internationalization (i18n) example! This demo showcases the power of the App Router and how to manage multilingual content seamlessly using next-intl."
+  },
+  "presentationOfTheEstablishment": {
+    "title": "Welcome to The Kitchen !",
+    "textPresentation": "We’d like to introduce ourselves, we're Leigh and Robert.\n\n We've been based in the mountains of southern France since 2005.\n\n I, Leigh, worked in private catering in the Alps for 3 years before moving south and running my own restaurant. Over the years, I have worked in the kitchen with many chefs (French, British, Italian, and Spanish) and have loved learning from them. Robert is a classically trained chef who ran his own hotel for 16 years before joining me for new adventures.\n\n The opportunity to swap the mountains for a life among the vineyards presented itself earlier this year, and we can't wait to introduce you to some of our favourite dishes, drawn not only from the mountains but also from our travels.\n\n We hope you enjoy your time with us.",
+    "finalWord": "Enjoy your meal"
+  },
+  "notFoundPage": {
+    "title": "Page Not Found",
+    "description": "Oops! It seems like you've stumbled upon a page that doesn't exist. Don't worry, our internationalization magic is still hard at work on other parts of the app. Feel free to navigate back to explore more!"
+  },
+  "navigation": {
+    "home": "Home"
+  },
+  "footer": {
+    "copyright": "© 2024 Your App. All rights reserved."
   }
 }
