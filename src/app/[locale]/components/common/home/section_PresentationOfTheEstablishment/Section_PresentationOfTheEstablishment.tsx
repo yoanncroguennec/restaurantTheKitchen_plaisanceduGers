@@ -34,7 +34,7 @@ export default function Section_PresentationOfTheEstablishment() {
         sx={{ textAlign: "justify" }}
         variant={matches ? "body2" : "h6"}
       />
-      <TypoBoldRight variant={matches ? "body2" : "h6"}>
+      <TypoBoldRight variant={matches ? "body1" : "h5"}>
         {t("presentationOfTheEstablishment.finalWord")}
       </TypoBoldRight>
     </RootSection_MenuCard>

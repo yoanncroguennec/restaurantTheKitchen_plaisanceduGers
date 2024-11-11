@@ -1,9 +1,13 @@
-import React from "react";
+"use client"
+
 import { Box } from "@mui/material";
+import ScrollToTop from "react-scroll-to-top";
 import {
   Section_PresentationOfTheEstablishment,
   Section_MenuCard,
   Section_CustomerReviews,
+  Section_Btns,
+  Section_Map,
 } from "../../components/common";
 
 export default function pages() {
@@ -15,6 +19,9 @@ export default function pages() {
       <Section_PresentationOfTheEstablishment />
       <Section_MenuCard />
       <Section_CustomerReviews />
+      <Section_Btns />
+      <Section_Map />
+      <ScrollToTop smooth />
     </Box>
   );
 }

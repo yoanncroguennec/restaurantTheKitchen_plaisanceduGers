@@ -38,25 +38,17 @@ export default function Container_App({ children }) {
 
   return (
     <Box>
-      {t("header.message")} // {t("presentationOfTheEstablishment.finalWord")}
-      <Button onClick={() => handleChangeLanguage("en")} variant='outlined'>
+      {/* <Button onClick={() => handleChangeLanguage("en")} variant='outlined'>
         EN
       </Button>
       <Button onClick={() => handleChangeLanguage("es")} variant='outlined'>
         FR
-      </Button>
+      </Button> */}
+       <Navbar />
       {matches ? null : (
         <>
-          <Navbar />
           <CustomCursor />
           {/* <Custom_BtnFloat /> */}
-        </>
-      )}
-      {/* {matches ? null : (
-        <>
-          <Navbar />
-          <CustomCursor />
-          <Custom_BtnFloat />
         </>
       )}
       <ProgressBar />

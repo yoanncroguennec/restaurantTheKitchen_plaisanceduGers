@@ -21,7 +21,7 @@ export default function Condition_OpeningHours({timeOpen, timeClosed}: Props) {
         );
       } else {
         return (
-          <Typography variant={matches ? "body2" : "h6"}> - FERMÉ - Ouvre à {timeOpen} et ferme à {timeClosed}</Typography>
+          <Typography variant={matches ? "body2" : "h6"}> - FERMÉ - Ouvert de {timeOpen} à {timeClosed}</Typography>
         );
       }
 }

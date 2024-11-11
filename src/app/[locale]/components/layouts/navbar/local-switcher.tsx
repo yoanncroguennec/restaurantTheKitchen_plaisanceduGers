@@ -1,33 +1,30 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
-import { ChangeEvent, useTransition } from "react";
+import { useState } from "react";
+import { MenuItem, InputLabel } from "@mui/material";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { useTranslation } from "react-i18next";
 
 export default function LocalSwitcher() {
-  const [isPending, startTransition] = useTransition();
-  const router = useRouter();
-  const localActive = useLocale();
+  const [language, setLanguage] = useState("");
+  const [i18n] = useTranslation("global");
 
-  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value;
-    startTransition(() => {
-      router.replace(`/${nextLocale}`);
-    });
+  const handleChange = (event: SelectChangeEvent) => {
+    setLanguage(event.target.value as string);
+    i18n.changeLanguage(event.target.value as string);
   };
+
   return (
-    <label className="border-2 rounded">
-      <select
-        defaultValue={localActive}
-        disabled={isPending}
-        onChange={onSelectChange}
-        style={{ color: "black" }}
+    <label className='border-2 rounded'>
+      <InputLabel>Langue</InputLabel>
+      <Select
+        value={language}
+        label='Langue'
+        onChange={handleChange}
       >
-        <option style={{ color: "black" }} value="en">
-          English
-        </option>
-        <option value="id">Indonesian</option>
-      </select>
+        <MenuItem value='en'>Ten</MenuItem>
+        <MenuItem value='es'>Twenty</MenuItem>
+      </Select>
     </label>
   );
 }
